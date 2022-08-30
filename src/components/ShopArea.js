@@ -1,13 +1,15 @@
 import React,{useState,useEffect} from 'react'
 import styled from 'styled-components'
+import * as AiIcons from 'react-icons/ai'
 import './ShopArea.css'
 
 const ShopArea = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
-
-  const [fake, setFake] = useState([]); 
-  console.log(fake);
+  const [data, setFake] = useState([]); 
+  const [filter, setFilter] = useState(data);
+  
+  console.log(data);
   useEffect(() => {
     fakestore();
   },[]); 
@@ -20,9 +22,45 @@ const ShopArea = () => {
     setFake(jsonData);
   }
 
+
+  const filterProduct = (e) => {
+    setSearchTerm(e.target.value);
+    const filtered = data.filter(item => {
+      return item.title.toLowerCase().includes(e.target.value.toLowerCase());
+    } );
+    setFilter(filtered);
+  }
+
   return (
     <Container>
-      <FilterContainer/>
+      <FilterContainer>
+        <div>
+          <h1 className='filterHeading'>Search Results</h1>
+          <h3 className='Categ'>CATEGORIES</h3>
+          <div className='CheckList'>
+            <input type="checkbox" id="all" onChange={() => filterProduct("all")}/>
+            <label htmlFor="all">All</label><br></br>
+            <input type="checkbox" id="clothes" onChange={() => filterProduct("clothes")}/>
+            <label htmlFor="clothes">Clothes</label><br></br>
+            <input type="checkbox" id="electronics" onChange={() => filterProduct("electronics")}/>
+            <label htmlFor="electronics">Electronics</label><br></br>
+            <input type="checkbox" id="furniture" onChange={() => filterProduct("furniture")}/>
+            <label htmlFor="furniture">Furniture</label><br></br>
+            <input type="checkbox" id="other" onChange={() => filterProduct("other")}/>
+            <label htmlFor="other">Other</label><br></br>
+
+          </div>
+          <div className='line'></div>
+          <h3 className='Categ'>PRICE RANGE</h3>
+          <div className='CheckList'>
+            <input type="checkbox" id="under" onChange={() => filterProduct("all")}/>
+            <label htmlFor="under">Under 500</label><br></br>
+            <input type="checkbox" id="between" onChange={() => filterProduct("clothes")}/>
+            <label htmlFor="between">1000 to 3000</label><br></br>
+
+          </div>
+        </div>
+      </FilterContainer>
       <ProductsContainer>
         <Logo src="/images/logo.png" />
         <SearchContainer>
@@ -32,7 +70,7 @@ const ShopArea = () => {
             <SearchIcon src="/images/search2-black.png" />
         </SearchContainer>
         <div className='Container'>
-            {fake
+            {data
               .filter((values) => {
                 if(searchTerm == ""){
                   return values;
@@ -44,18 +82,17 @@ const ShopArea = () => {
               return(
                 <>
                   <div className='Box'>
-                    <div className='btn' id='btnh1'><i class="fa-solid fa-heart"></i></div>
-                    <div className='btn' id='btnh2'><i class="fa-regular fa-heart"></i></div>
+                    <button className='btn1'><AiIcons.AiFillHeart /></button>
                     <img className="ImgProd"  src={values.image} alt="image"/>
                     <div className='Content'>
                       <h5 className='Title'>{values.title}</h5>
                       <p className='Amount'>$ {values.price}</p>
                       <div className='Rate'>
-                      <img className="Stars" src="/images/star.png"></img>
-                      <img className="Stars" src="/images/star.png"></img>
-                      <img className="Stars" src="/images/star.png"></img>
-                      <img className="Stars" src="/images/star.png"></img>
-                      <img className="Stars" src="/images/star.png"></img>
+                      <img className="Stars" src="/images/star.png" alt=''></img>
+                      <img className="Stars" src="/images/star.png" alt=''></img>
+                      <img className="Stars" src="/images/star.png" alt=''></img>
+                      <img className="Stars" src="/images/star.png" alt=''></img>
+                      <img className="Stars" src="/images/star.png" alt=''></img>
                       <p className="Ratings">({values.rating.count})</p>
                       </div>
                       <div className='View'><p>VIEW PRODUCT</p></div>
