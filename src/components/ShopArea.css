@@ -1,0 +1,112 @@
+body{
+    background: #ffffff;
+  }
+  
+  h1{
+    color: #000;
+    text-align: center;
+  }
+  
+  .Title{
+    color: #303030;
+    text-align: center;
+    text-align: justify;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  
+  .Amount{
+    color: #0081c6;
+    text-align: center;
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+  
+  .Container{
+    /* background: #3b3b3b; */
+    max-width: 80%;
+    margin-top: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    /* if cards exceeded the maximum with then they'll come down */
+  }
+
+  .Content{
+    padding-left: auto;
+    padding-right: auto;
+  }
+  
+  .Box{
+    background: #fff;
+    width: 20%;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: auto;
+    padding-right: auto;
+    box-shadow: 2px 4px 10px #c8c8c8;
+    border-radius: 10px;
+    line-height: 1.2;
+    font-size: 0.9rem;
+  }
+  
+  .ImgProd{
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+  }
+  
+  .Stars{
+    width:100%;
+    height:100%;
+    margin-top: 2px;
+  }
+  
+  .Ratings{
+    font-size: 70%;
+    margin-top: 7px;
+    margin-left: 5px;
+    @media (max-width: 425px) {
+      font-size: 0.2rem;
+    }
+
+  }
+  
+  .Rate{
+    display: flex;
+    width: 10%;
+    /* background:#000; */
+    height:20px;
+   
+  }
+
+.View{
+    background: #8282ff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    /* margin-top: -16px; */
+    margin-left: -10px;
+    transform: translateY(-16px);
+    transition-duration: .5s;
+    border-radius: 0px 0px 10px 10px;
+    opacity: 0;
+    cursor: pointer;
+}
+.View:hover{
+    opacity: 1;
+}
+
+
+
+.btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
