@@ -44,7 +44,7 @@ body{
   .Box{
     background: #fff;
     width: 20%;
-    height: 300px;
+    height: 330px;
     margin: 10px;
     padding: 10px;
     padding-left: auto;
@@ -91,10 +91,10 @@ body{
     padding: 10px;
     text-align: center;
     width: 100%;
-    /* margin-top: -16px; */
+    margin-top: 0px;
     margin-left: -10px;
     transform: translateY(-16px);
-    transition-duration: .5s;
+    transition-duration: .2s;
     border-radius: 0px 0px 10px 10px;
     opacity: 0;
     cursor: pointer;
@@ -104,9 +104,40 @@ body{
 }
 
 
+.filterHeading{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5%;
+    margin-top: 40%;
+    color: #000;
+}
 
-.btn{
-    position: absolute;
-    top: 0;
-    right: 0;
+.Categ{
+    font-size: 1rem;
+    color: #676767;
+    margin-left: 12%;
+    margin-top: 10%;
+}
+
+.btn1{
+    border: none;
+    background :#fff;
+    font-size: 1.5rem;
+    color: #d2d2d2;
+}
+.btn1:hover{
+    color: #ed1031;
+}
+
+.CheckList{
+    padding-left: 10%;
+    /* background: #000; */
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: #d2d2d2;
+    margin-top: 5%;
+    margin-left: 10%
 }
