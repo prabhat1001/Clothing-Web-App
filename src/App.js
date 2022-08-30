@@ -1,34 +1,20 @@
 import React from 'react'
-import styled from 'styled-components';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import MainPage from './components/MainPage';
+import ShopArea from './components/ShopArea';
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
+    <Router>
+      <Routes> 
+      <Route path ='/' element={<MainPage />}></Route>
+        <Route path ='/shopArea' element={<ShopArea/>}></Route>
+      </Routes>
       
-      <Logo src="/images/logo.png" />
-      <BgImage/>
-    </div>
+    </Router>
+  </div>
   )
 }
-const BgImage = styled.div`
-    height: 100%;
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("/images/bg1.png");
-    position: absolute;
-    top:0;
-    right:0;
-    left:0;
-    z-index:-1;
-`;
-
-const Logo = styled.img`
-  position: fixed;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-`;
 
 export default App
