@@ -122,11 +122,10 @@ const SearchBar = styled.input`
   color: #888888;
 `;
 const SearchIcon = styled.img`
- 
   width: 30px;
   height: 30px;
   margin-top: 10px;
-  margin-left: 4%;
+  margin-left: 5%;
   @media screen and (max-width: 500px) {
     width: 25px;
     height: 25px;
