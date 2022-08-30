@@ -1,0 +1,60 @@
+.title{
+    color: #303030;
+    text-align: center;
+    text-align: justify;
+    font-size: 0.7em;
+    width:100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+   
+  }
+
+  .suggestions{
+    color: #303030;
+    text-align: center;
+    text-align: justify;
+    font-size: 0.7em;
+    /* background-color: #f2f2f2; */
+    line-height: 0.8em;
+    margin-left:10px;
+    cursor: pointer;
+  }
+
+
+  
+  .container{
+    /* background: #3b3b3b; */
+    max-width: 60%;
+    margin:0 auto;
+    display:flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap;  */
+    /* if cards exceeded the maximum with then they'll come down */
+    cursor: pointer;
+  }
+  
+  .box{
+    background: #fff;
+    width: 20%;
+    height: 120px;
+    margin: 10px;
+    padding: 20px;
+    padding-left: auto;
+    padding-right: auto;
+    /* box-shadow: 2px 4px 10px #888; */
+    border-radius: 10px;
+  }
+  
+  .imgProd{
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  .imgProd:hover{
+    transform: scale(1.3);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
